@@ -1,0 +1,80 @@
+<table>
+<tr>
+    <td>  
+        <input style="margin-left: 10px" type="text" id ="singleID" placeholder="Single ID" />
+    </td>
+    <td>
+        <button style="margin-left: 10px"  (click)="customHighlightSingleID()">Highlight Single ID</button>
+    </td> 
+    <td> 
+        <input  style="margin-left: 10px"  type="text" id ="drawingName" placeholder="Drawing name (no path)" />
+    </td>
+    <td>
+        <button  style="margin-left: 10px; margin-right:10px"  (click)="customLoadDrawing()">Load Drawing</button>
+    </td> 
+    <td ><strong>Multiselected:</strong><canvas id="dummy" width="10" height="10"></canvas>
+    </td>
+    <td *ngFor="let space of myMultiSelect">({{space.SpaceID}}, {{space.Area}})&nbsp;</td>
+</tr>        
+</table>
+
+<br>
+<table border="0">
+	<tr>
+        <td>
+        <button style="margin-left: 5px" (click)="cadviewerDragSelectSpaces()">Select Spaces by DRAG RECTANGLE</button>
+        </td> 
+        <td>
+        <button style="margin-left: 5px" (click)="customStartMultiSelect()">StartMultiSelect</button>
+       </td> 
+        <td>
+        <button style="margin-left: 5px" (click)="customFinishMultiSelect()">FinishMultiSelect</button>
+       </td> 
+       <td>
+        <button style="margin-left: 5px" (click)="customGetAllSpaceObjects()">Get All Space Objects</button>
+       </td> 
+       <td>
+       <button style="margin-left: 5px" (click)="customClearSpaces()">Clear All Highlight</button>
+       </td> 
+
+       <td>
+        <button style="margin-left: 5px" (click)="customColorLayer()">Change Layer Color</button>
+        </td> 
+        <td> 
+        <input  style="margin-left: 10px"  type="text" id ="layerName" value="EC1 Space Numbers" />
+        </td>
+        <td> 
+        <input  style="margin-left: 10px"  type="text" id ="layerColor" value="#0045FF" />
+        </td>
+
+
+       </tr>
+    <tr>
+        <td>
+            <button style="margin-left: 5px" (click)="customColorSpaces()">Highlight Spaces</button>
+        </td> 
+        <td>
+            <button style="margin-left: 5px" (click)="customSpaceBorders()">Color Space Borders</button>
+        </td> 
+        <td>
+        <button style="margin-left: 5px" (click)="customTooltips()">Set Custom Tooltip</button>
+        </td> 
+        <td>
+        <button style="margin-left: 5px" (click)="customClearTooltips()">Clear Tooltips</button>
+        </td> 
+        <td>
+        <button style="margin-left: 5px" (click)="customHatchSpaces()">Hatch Spaces</button>
+        </td> 
+        <td>
+        <button style="margin-left: 5px" (click)="customAddTextToSpaces()">Text In Spaces</button>
+        </td> 
+        <td>
+        <button style="margin-left: 5px" (click)="getJSONredlinesandnotes()">Restore Deleted JSON Redlines&Notes</button>
+        </td> 
+        </tr>
+</table>
+<br>
+      
+
+<div id="floorPlan">
+</div>

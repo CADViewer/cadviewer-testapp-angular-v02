@@ -1,0 +1,21 @@
+
+> cadviewer-testapp-angular-v02@0.0.0 start
+> ng serve
+
+
+Initial Chunk Files   | Names         |  Raw Size
+vendor.js             | vendor        |   9.27 MB |
+polyfills.js          | polyfills     | 313.49 kB |
+styles.css, styles.js | styles        | 207.41 kB |
+main.js               | main          |  83.73 kB |
+runtime.js            | runtime       |   6.89 kB |
+
+| Initial Total |   9.87 MB
+
+Build at: 2022-06-09T07:20:27.694Z - Hash: 42f0177ccae98716 - Time: 4154ms
+
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+
+× Failed to compile.
+Terminate batch job (Y/N)? 
