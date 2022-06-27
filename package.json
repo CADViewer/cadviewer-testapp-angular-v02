@@ -1,6 +1,7 @@
 {
   "name": "cadviewer-testapp-angular-v02",
-  "version": "7.0.32",
+  "version": "7.0.34",
+  "description": "CADViewer - JavaScript CAD Viewer sample implementation for Angular 13 with TypeScript",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -18,7 +19,7 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "cadviewer": "^7.0.31",
+    "cadviewer": "^7.0.34",
     "jquery": "^3.6.0",
     "resize-observer-polyfill": "^1.5.1",
     "rxjs": "~7.5.0",
@@ -40,5 +41,33 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "style-loader": "^3.3.1",
     "typescript": "~4.7.2"
-  }
+  },
+  "author": "charnung",
+  "license": "TMS 1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CADViewer/cadviewer-testapp-angular-v02"
+  },
+  "bugs": {
+    "url": "https://github.com/CADViewer"
+  },
+  "homepage": "https://cadviewer.com",
+  "keywords": [
+    "CAD",
+    "javascript",
+    "CAD Viewer",
+    "DWG",
+    "DXF",
+    "DWF",
+    "PDF",
+    "DGN",
+    "TIFF",
+    "Annotate",
+    "Redline",
+    "Space Management",
+    "CAFM",
+    "IOT",
+    "Asset Management"
+  ]
+
 }
