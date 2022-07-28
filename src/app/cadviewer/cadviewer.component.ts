@@ -64,8 +64,7 @@ var text_style_arial_11pt_bold = {
       };
   
   
-var selectionType = "MultiSelectClick";
-
+var selectionType = "none";
 
 /*   Multiple Select Methods   */
 
@@ -907,13 +906,13 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
                   cadviewer.cvjs_highlightSpace(click_rmid, highlight_purple_borders); 
 
                 if (my_test_counter==5)
-                  cadviewer.cvjs_hatchSpace(click_rmid, "pattern_45degree_crosshatch_fine", "#550055" , "0.5");
+                  cadviewer.cvjs_hatchSpace(click_rmid, "pattern_45degree_crosshatch_fine", "#550055" , 0.5);
                 if (my_test_counter==6)
-                  cadviewer.cvjs_hatchSpace(click_rmid, "pattern_45degree_standard", "#AA2200" , "0.5");
+                  cadviewer.cvjs_hatchSpace(click_rmid, "pattern_45degree_standard", "#AA2200" , 0.5);
                 if (my_test_counter==7)
-                  cadviewer.cvjs_hatchSpace(click_rmid, "pattern_135degree_wide", "#0055BB" , "0.5");
+                  cadviewer.cvjs_hatchSpace(click_rmid, "pattern_135degree_wide", "#0055BB" , 0.5);
                 if (my_test_counter==8)
-                cadviewer.cvjs_hatchSpace(click_rmid, "pattern_90degree_wide", "#220088" , "0.5");
+                cadviewer.cvjs_hatchSpace(click_rmid, "pattern_90degree_wide", "#220088" , 0.5);
         
         }     
       
@@ -955,7 +954,7 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
       cadviewer.cvjs_debugMode(true);
 
 
-      cadviewer.cvjs_setAllServerPaths_and_Handlers(ServerBackEndUrl, ServerUrl, ServerLocation, "NodeJS", "Angular", "floorPlan");
+      cadviewer.cvjs_setAllServerPaths_and_Handlers(ServerBackEndUrl, ServerUrl, ServerLocation, "NodeJS", "Angular", "floorPlan","");
 
       // PATH and FILE to be loaded, can be in formats DWG, DXF, DWF, SVG , JS, DGN, PCF, JPG, GIF, PNG
 //      FileName = ServerBackEndUrl+ "/content/drawings/dwg/BRA_Alta Vila_02_CkIn_06082020.dwg";
@@ -1047,7 +1046,7 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
     //      cadviewer.cvjs_loadCADViewerLanguage("English", ServerUrl+"/assets/cadviewer/app/cv/cv-pro/language_table/cadviewerProLanguage.xml");
           // set to Angular mode
                     
-        cadviewer.cvjs_loadCADViewerLanguage("English");  // cadviewer.cvjs_loadCADViewerLanguage("English", "/assets/cadviewer/app/cv/cv-pro/language_table/cadviewerProLanguage.xml");
+        cadviewer.cvjs_loadCADViewerLanguage("English", "");  // cadviewer.cvjs_loadCADViewerLanguage("English", "/assets/cadviewer/app/cv/cv-pro/language_table/cadviewerProLanguage.xml");
     
           // Available languages:  "English" ; "French, "Korean", "Spanish", "Portuguese", "Chinese-Simplified", "Chinese-Traditional"
               
@@ -1067,6 +1066,12 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
         cadviewer.cvjs_setTopMenuXML("floorPlan", "cadviewer_full_commands_01.xml", "");  // cadviewer.cvjs_setTopMenuXML("floorPlan", "cadviewer_full_commands_01.xml", "/assets/cadviewer/app/cv/cv-pro/menu_config/");
      
              
+
+        // set SpaceObjectsCustomMenu location and json config file,  flag true to display SpaceObject Menu, false to hide
+        cadviewer.cvjs_setSpaceObjectsCustomMenu( "/content/customInsertSpaceObjectMenu/", "cadviewercustomspacecommands.json", true);
+
+
+
         // Initialize CADViewer  - needs the div name on the svg element on page that contains CADViewerJS and the location of the
         // main application "app" folder. It can be either absolute or relative
             
@@ -1404,10 +1409,10 @@ public customHatchSpaces(){
     
     for (var spc in spaceObjectIds)
     {
-    if (hatchtype == 1) cadviewer.cvjs_hatchSpace(spaceObjectIds[spc], "pattern_45degree_crosshatch_fine", "#550055" , "0.5");
-    if (hatchtype == 2) cadviewer.cvjs_hatchSpace(spaceObjectIds[spc], "pattern_45degree_standard", "#AA2200" , "0.5");
-    if (hatchtype == 3) cadviewer.cvjs_hatchSpace(spaceObjectIds[spc],  "pattern_135degree_wide", "#0055BB" , "0.5");
-    if (hatchtype == 4) cadviewer.cvjs_hatchSpace(spaceObjectIds[spc],  "pattern_90degree_wide", "#220088" , "0.5");
+    if (hatchtype == 1) cadviewer.cvjs_hatchSpace(spaceObjectIds[spc], "pattern_45degree_crosshatch_fine", "#550055" , 0.5);
+    if (hatchtype == 2) cadviewer.cvjs_hatchSpace(spaceObjectIds[spc], "pattern_45degree_standard", "#AA2200" , 0.5);
+    if (hatchtype == 3) cadviewer.cvjs_hatchSpace(spaceObjectIds[spc],  "pattern_135degree_wide", "#0055BB" , 0.5);
+    if (hatchtype == 4) cadviewer.cvjs_hatchSpace(spaceObjectIds[spc],  "pattern_90degree_wide", "#220088" , 0.5);
       
     }
     
