@@ -149,14 +149,46 @@ function cvjs_mouseenter(id :string, handle : string, entity :string){
 };
 function cvjs_mousedown(id :string, handle :string, entity :string){
   console.log("cvjs_mousedown");
+};
 
 
+
+function cvjs_click(id :string, handle :string, entity :string, path : string, xpos : number, ypos: number){
+  
+  
+  console.log("cvjs_click "+id+"  "+handle+" xpos="+xpos+" ypos="+ypos);
+
+  // NOTE: this is template code to insert a SENSOR with 3 layer states into the drawing at mouse click
+  // we abort in the general case, uncomment to use.
+  var myvar = true;
+  if (myvar) return;   // see above
+
+
+  // if there is no x,y we simply return
+  if (xpos == undefined || ypos == undefined) return;
+
+  var loadSpaceImage_Location = "data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmlld0JveD0iLTExMDAgLTIwMCAyMjAwIDIyMDAiCiAgIGhlaWdodD0iMjIwMCIKICAgd2lkdGg9IjIyMDAiCiAgIHhtbDpzcGFjZT0icHJlc2VydmUiCiAgIGlkPSJzdmcyIgogICB2ZXJzaW9uPSIxLjEiPjxtZXRhZGF0YQogICAgIGlkPSJtZXRhZGF0YTgiPjxyZGY6UkRGPjxjYzpXb3JrCiAgICAgICAgIHJkZjphYm91dD0iIj48ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD48ZGM6dHlwZQogICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+PC9jYzpXb3JrPjwvcmRmOlJERj48L21ldGFkYXRhPjxkZWZzCiAgICAgaWQ9ImRlZnM2IiAvPjxnCiAgICAgaWQ9ImcxMCI+PGcKICAgICAgIGlkPSJnMTIiPjxwYXRoCiAgICAgICAgIGlkPSJwYXRoNzIiCiAgICAgICAgIHN0eWxlPSJmaWxsOiNlMTFhMjI7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmUiCiAgICAgICAgIGQ9Im0gNjQ5LjE0LDAgYyAtNDMyLjc4LC05Mi4xOSAtODY1LjQ5LC05Mi4xOSAtMTI5OC4yOCwwIC0xMjIuMTIsMjYuMDEgLTIxNy4yOCwxMjEuMTcgLTI0My4zLDI0My4zIC05Mi4xOCw0MzIuNzggLTkyLjE4LDg2NS40OSAwLDEyOTguMjggMjYuMDIsMTIyLjEyIDEyMS4xOCwyMTcuMjggMjQzLjMsMjQzLjI5IDQzMi43OSw5Mi4xOSA4NjUuNSw5Mi4xOSAxMjk4LjI4LDAgMTIyLjEzLC0yNi4wMSAyMTcuMjksLTEyMS4xNyAyNDMuMywtMjQzLjI5IDkyLjE5LC00MzIuNzkgOTIuMTksLTg2NS41IDAsLTEyOTguMjggLTI2LjAxLC0xMjIuMTMgLTEyMS4xNywtMjE3LjI5IC0yNDMuMywtMjQzLjMiIC8+PHBhdGgKICAgICAgICAgaWQ9InBhdGg3NCIKICAgICAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIKICAgICAgICAgZD0ibSAwLDE0MDcuMzQgYyAtMTguODgsMCAtMzQuMjUsLTE1LjM2IC0zNC4yNSwtMzQuMjUgdiAtNzI0LjggYyAwLC0yMC40MSAtMTAuNTksLTM5LjM2IC0yNy45OCwtNTAuMDUgLTM1LjY4LC0yMS45NSAtNTYuOTksLTU5LjkgLTU2Ljk5LC0xMDEuNDkgMCwtNjUuNzMgNTMuNDksLTExOS4yMiAxMTkuMjIsLTExOS4yMiA2NS43NCwwIDExOS4yMiw1My40OSAxMTkuMjIsMTE5LjIyIDAsNDEuNTkgLTIxLjMxLDc5LjU0IC01Ni45OSwxMDEuNDkgLTE3LjM4LDEwLjY5IC0yNy45NywyOS42NCAtMjcuOTcsNTAuMDUgdiA3MjQuOCBjIDAsMTguODkgLTE1LjM3LDM0LjI1IC0zNC4yNiwzNC4yNSB6IG0gMCwtMTE0Ny4zNCBjIC0xMzAuNTQsMCAtMjM2Ljc0LDEwNi4yMSAtMjM2Ljc0LDIzNi43NSAwLDcxLjE1IDMxLjIyLDEzNi44NSA4NC45NiwxODEuNTMgdiA2OTQuODEgYyAwLDgzLjcgNjguMDksMTUxLjc4IDE1MS43OCwxNTEuNzggODMuNjksMCAxNTEuNzgsLTY4LjA4IDE1MS43OCwtMTUxLjc4IHYgLTY5NC44MSBjIDUzLjc0LC00NC42OCA4NC45NywtMTEwLjM4IDg0Ljk3LC0xODEuNTMgMCwtMTMwLjU0IC0xMDYuMjEsLTIzNi43NSAtMjM2Ljc1LC0yMzYuNzUiIC8+PHBhdGgKICAgICAgICAgaWQ9InBhdGg3NiIKICAgICAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6bm9uZSIKICAgICAgICAgZD0ibSAzODguMTAsMTQ1Ni42NSBjIC0yNi41MSwwIC00OC4wOCwtMjEuNTcgLTQ4LjA4LC00OC4wOCAwLC0yNi41MSAyMS41NywtNDguMDggNDguMDgsLTQ4LjA4IDI2LjUxLDAgNDguMDgsMjEuNTcgNDguMDgsNDguMDggMCwyNi41MSAtMjEuNTcsNDguMDggLTQ4LjA4LDQ4LjA4IHogbSAwLC0yMTMuNjkgYyAtOTEuMzIsMCAtMTY1LjYxLDc0LjI5IC0xNjUuNjEsMTY1LjYxIDAsOTEuMzIgNzQuMjksMTY1LjYxIDE2NS42MSwxNjUuNjEgOTEuMzIsMCAxNjUuNjEsLTc0LjI5IDE2NS42MSwtMTY1LjYxIDAsLTkxLjMyIC03NC4yOSwtMTY1LjYxIC0xNjUuNjEsLTE2NS42MSIgLz4KPC9nPjwvZz48L3N2Zz4="
+
+  var baseobject = "http://localhost:3000/content/customInsertSpaceObjectMenu/images/sensor_c.svg"
+  var id = "myID_"+ Math.floor(Math.random() * 10000);
+  var type = "sensor";
+  var layer = "mylayer";
+  cadviewer.cvjs_setImageSpaceObjectParameters(baseobject, id, type, layer);
+  // cadviewer.cvjs_setImageSpaceObjectParameters(loadSpaceImage_Location, id, type, layer);
+  cadviewer.cvjs_setGlobalSpaceImageObjectScaleFactor(1.0);
+
+  //console.log("cvjs_addFixedSizeImageSpaceObjectXY");
+  cadviewer.cvjs_addFixedSizeImageSpaceObjectXY("floorPlan", xpos, ypos)
+  //cvjs_addFixedSizeImageSpaceObject("floorPlan");
+
+// tell to update the Scroll bar 
+//vqUpdateScrollbar(id, handle);
+// window.alert("We have clicked an entity: "+entity.substring(4)+"\r\nThe AutoCAD Handle id: "+handle+"\r\nThe svg id is: "+id+"\r\nHighlight SQL pane entry");
+  
 
 };
-function cvjs_click(id :string, handle :string, entity :string){
-  console.log("cvjs_click");
 
-};
+
 function cvjs_dblclick(id :string, handle :string, entity :string){
   console.log("cvjs_dblclick");
 
@@ -552,6 +584,80 @@ export function return_myReturnArray(){
 
 
 
+function myCustomModalPopUpBody(rmid : any){
+
+
+  var textcolor = "darkblue";
+  var textcolor2 = "black";
+
+
+  // set custom color on modal   // NOTE, we set to false for standard!!!
+  cadviewer.cvjs_styleQTip_color(false, '#3DCD5D', '#293133', '#293133', '#293133', '#293133');
+  //textcolor = "#CBCBCB";
+  //textcolor2 = "#CBCBCB";
+
+
+  console.log("click on myCustomPopUpBody: "+rmid+" I now change the pop-up menu:");
+  // make your own popup based on callback
+  var my_cvjsPopUpBody = "";
+
+  // we make 3 random modals
+  var modalnumber = Math.floor(Math.random() * 6.0);
+
+  if (modalnumber == 0){
+    // standard modal
+    // standard 3 item menu
+    //  cvjs_modal_1 sets a suitable size 
+    // style=\"background-color: none; color: #CBCBCB;\"
+    my_cvjsPopUpBody = "<div  class=\"cvjs_modal_1\" id=\"my_own_clickmenu1()\">Custom<br>Menu 1<br><i class=\'fa fa-undo\'></i></div>";
+    my_cvjsPopUpBody += "<div  class=\"cvjs_modal_1\" id=\"my_own_clickmenu2()\">Custom<br>Menu 2<br><i class=\'fa fa-info-circle\'></i></div>";
+    my_cvjsPopUpBody += "<div  class=\"cvjs_modal_1\" id=\"cvjs_zoomHere()\">Zoom<br>Here<br><i class=\'fa fa-search-plus\'></i></div>";
+  }
+  else
+  if (modalnumber == 1){
+    // column based, but just two click menus
+    my_cvjsPopUpBody = "<div class=\"cvjs_modal_1\" id=\"my_own_clickmenu1()\">Custom<br>Menu One<br><i class=\'fa fa-undo\'></i></div>";
+    my_cvjsPopUpBody += "<div class=\"cvjs_modal_1\" id=\"cvjs_zoomHere()\">Zoom<br>Here<br><i class=\'fa fa-reply\'></i></div>";
+  }
+  else
+  if (modalnumber >=2){
+    // row based content with callback
+
+    var str = " "+rmid;
+    my_cvjsPopUpBody = "<div style=\"color: "+textcolor2+"\">";
+    my_cvjsPopUpBody += "Element ID: <span style=\"color: "+textcolor+";cursor: pointer;\" id=\"custom_callback1()\" >"+str+"</span><br>";
+
+    var branch = Math.floor(Math.random() * 2.0);
+
+    if (branch == 0){
+      str = " Presumed Wall Void";	
+      my_cvjsPopUpBody += "Survey: <span style=\"color: "+textcolor+";cursor: pointer;\" id=\"custom_callback2()\" >"+str+"</span><br>";
+      str = " Service Alert";
+      my_cvjsPopUpBody += "Notice: <span style=\"color: "+textcolor+";cursor: pointer;\" id=\"custom_callback3()\" >"+str+"</span><br>";
+    
+    }else{
+      str = "Presumed Ceiling Void";	
+      my_cvjsPopUpBody += "Survey: <span style=\"color: "+textcolor+";cursor: pointer;\" id=\"custom_callback4()\" >"+str+"</span><br>";
+      str = "Evaluation Pending";
+      my_cvjsPopUpBody += "Notice: <span style=\"color: "+textcolor+";cursor: pointer;\" id=\"custom_callback5()\" >"+str+"</span><br>";
+
+    }
+//		my_cvjsPopUpBody += "Status: <a href=\"javascript:custom_callback5()\"><strong>More Info</strong> <i class=\"glyphicon glyphicon-transfer\" id=\"custom_callback5()\"></i></a> ";
+
+    my_cvjsPopUpBody += "Status: <span style=\"color: "+textcolor+";cursor: pointer;\" id=\"custom_callback6()\" >"+"<strong>More Info</strong>"+"   <i class=\'fa fa-reply\'></i></span><br>";
+    my_cvjsPopUpBody += "</div>";
+  }
+
+  return my_cvjsPopUpBody;
+}
+
+function populateMyCustomPopUpBody(rmid :any, node :any){
+  console.log(" we actually have a second callback to change content of the the pop-up menu after myCustomPopUpBody (developed originally for Angular2) populateMyCustomPopUpBody: "+rmid+"  "+node);
+}
+
+
+
+
 
 // SAMPLE TO DRAG RECTANGLE if overlapping space objects 
 
@@ -942,6 +1048,9 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
   };
   
   
+
+
+
   public init_CADViewer(params :any){
 
 /*
@@ -1067,6 +1176,11 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
      
              
 
+        // Display Coordinates
+        cadviewer.cvjs_DisplayCoordinatesMenu("floorPlan",true);
+
+
+
         // set SpaceObjectsCustomMenu location and json config file,  flag true to display SpaceObject Menu, false to hide
         cadviewer.cvjs_setSpaceObjectsCustomMenu( "/content/customInsertSpaceObjectMenu/", "cadviewercustomspacecommands.json", true);
 
@@ -1108,6 +1222,12 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
      
      
      
+            
+           var my_cvjsPopUpBody = "";           
+          //cvjs_setNoModalMode(true);
+          cadviewer.cvjs_setCallbackForModalDisplay(true, myCustomModalPopUpBody, populateMyCustomPopUpBody);
+
+
            // Initialize CADViewer - needs the div name on the svg element on page that contains CADViewerJS and the location of the
            // And we intialize with the Space Object Custom values
          //  cadviewer.cvjs_InitCADViewer_highLight_popUp_app("floorPlan", ServerUrl+"app/", cvjsRoomPolygonBaseAttributes, cvjsRoomPolygonHighlightAttributes, cvjsRoomPolygonSelectAttributes, my_cvjsPopUpBody);
@@ -1528,6 +1648,46 @@ public highlight_space_object(myspace :string, scale : number){
 // */
 //
 // function cvjs_AddTextOnSpaceObject(txtLayer, Id, leftScale, textStringArr, textStyleArr, scaleTextArr, hexColorTextArr, clipping, centering){
+
+
+
+// Toggle sensor objects
+
+public browstateflag = 0;
+
+public togglesensorstates(){
+
+
+    this.browstateflag++;
+
+    if  (this.browstateflag == 5) this.browstateflag =1;
+
+    if (this.browstateflag == 1)
+        cadviewer.cvjs_showOnlyObjectInAllSpaceObjectGroups("online");  // all
+
+    if (this.browstateflag == 2)
+    cadviewer.cvjs_showOnlyObjectInAllSpaceObjectGroups("offline"); // all
+
+    if (this.browstateflag == 3)
+    cadviewer.cvjs_showOnlyObjectInAllSpaceObjectGroups("unknow");    // 
+
+    if (this.browstateflag == 4){
+
+        var spaceObjectIds = cadviewer.cvjs_getSpaceObjectIdList();
+        var i=0;
+        for (var spc in spaceObjectIds) {
+            var id = spaceObjectIds[spc];
+            if (i % 3 == 0)
+            cadviewer.cvjs_showOnlyObjectInSpaceObjectGroup(id, "online", "id");    // loop over and give them different state
+            if (i % 3 == 1)
+            cadviewer.cvjs_showOnlyObjectInSpaceObjectGroup(id, "offline", "id");
+            if (i % 3 == 2)
+            cadviewer.cvjs_showOnlyObjectInSpaceObjectGroup(id, "unknow", "id");
+            i++;
+        }
+    }
+
+}
 
 
 

@@ -22,7 +22,7 @@
 <table border="0">
 	<tr>
         <td>
-        <button style="margin-left: 5px" (click)="cadviewerDragSelectSpaces()">Select Spaces by DRAG RECTANGLE</button>
+        <button style="margin-left: 5px" (click)="cadviewerDragSelectSpaces()">Select Spaces by DRAG RECT</button>
         </td> 
         <td>
         <button style="margin-left: 5px" (click)="customStartMultiSelect()">StartMultiSelect</button>
@@ -31,17 +31,17 @@
         <button style="margin-left: 5px" (click)="customFinishMultiSelect()">FinishMultiSelect</button>
        </td> 
        <td>
-        <button style="margin-left: 5px" (click)="customGetAllSpaceObjects()">Get All Space Objects</button>
+        <button style="margin-left: 5px" (click)="customGetAllSpaceObjects()">Get All Spaces</button>
        </td> 
        <td>
-       <button style="margin-left: 5px" (click)="customClearSpaces()">Clear All Highlight</button>
+       <button style="margin-left: 5px" (click)="customClearSpaces()">Clear All </button>
        </td> 
 
        <td>
         <button style="margin-left: 5px" (click)="customColorLayer()">Change Layer Color</button>
         </td> 
         <td> 
-        <input  style="margin-left: 10px"  type="text" id ="layerName" value="EC1 Space Numbers" />
+        <input  style="margin-left: 10px"  type="text" id ="layerName" value="RM_" />
         </td>
         <td> 
         <input  style="margin-left: 10px"  type="text" id ="layerColor" value="#0045FF" />
@@ -54,10 +54,10 @@
             <button style="margin-left: 5px" (click)="customColorSpaces()">Highlight Spaces</button>
         </td> 
         <td>
-            <button style="margin-left: 5px" (click)="customSpaceBorders()">Color Space Borders</button>
+            <button style="margin-left: 5px" (click)="customSpaceBorders()">Color Borders</button>
         </td> 
         <td>
-        <button style="margin-left: 5px" (click)="customTooltips()">Set Custom Tooltip</button>
+        <button style="margin-left: 5px" (click)="customTooltips()">Custom Tooltip</button>
         </td> 
         <td>
         <button style="margin-left: 5px" (click)="customClearTooltips()">Clear Tooltips</button>
@@ -69,7 +69,10 @@
         <button style="margin-left: 5px" (click)="customAddTextToSpaces()">Text In Spaces</button>
         </td> 
         <td>
-        <button style="margin-left: 5px" (click)="getJSONredlinesandnotes()">Restore Deleted JSON Redlines&Notes</button>
+        <button style="margin-left: 5px" (click)="getJSONredlinesandnotes()">Restore JSON Redlines</button>
+        </td> 
+        <td>
+        <button style="margin-left: 5px" (click)="togglesensorstates()">Toggle Sensor</button>
         </td> 
         </tr>
 </table>
