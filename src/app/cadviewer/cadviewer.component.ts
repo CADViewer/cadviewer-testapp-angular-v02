@@ -160,7 +160,7 @@ function cvjs_click(id :string, handle :string, entity :string, path : string, x
 
   // NOTE: this is template code to insert a SENSOR with 3 layer states into the drawing at mouse click
   // we abort in the general case, uncomment to use.
-  var myvar = true;
+  var myvar = false;
   if (myvar) return;   // see above
 
 
@@ -1154,10 +1154,11 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
         // CHANGE LANGUAGE - DEFAULT IS ENGLISH
     //      cadviewer.cvjs_loadCADViewerLanguage("English", ServerUrl+"/assets/cadviewer/app/cv/cv-pro/language_table/cadviewerProLanguage.xml");
           // set to Angular mode
-                    
-        cadviewer.cvjs_loadCADViewerLanguage("English", "");  // cadviewer.cvjs_loadCADViewerLanguage("English", "/assets/cadviewer/app/cv/cv-pro/language_table/cadviewerProLanguage.xml");
+                        
+        cadviewer.cvjs_loadCADViewerLanguage("English", ""); 
+        // Available languages:  "English" ; "French, "Korean", "Spanish", "Portuguese", "Chinese-Simplified", "Chinese-Traditional"
+        //cadviewer.cvjs_loadCADViewerLanguage("English", "/cadviewer/app/cv/cv-pro/custom_language_table/custom_cadviewerProLanguage.xml");
     
-          // Available languages:  "English" ; "French, "Korean", "Spanish", "Portuguese", "Chinese-Simplified", "Chinese-Traditional"
               
           // Set Icon Menu Interface controls. Users can: 
           // 1: Disable all icon interfaces
@@ -1173,8 +1174,7 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
         // 3: Users can change the number of top menu icon pages and the content of pages, based on a configuration file in folder /cadviewer/app/js/menu_config/
         
         cadviewer.cvjs_setTopMenuXML("floorPlan", "cadviewer_full_commands_01.xml", "");  // cadviewer.cvjs_setTopMenuXML("floorPlan", "cadviewer_full_commands_01.xml", "/assets/cadviewer/app/cv/cv-pro/menu_config/");
-     
-             
+                  
 
         // Display Coordinates
         cadviewer.cvjs_DisplayCoordinatesMenu("floorPlan",true);
@@ -1183,7 +1183,6 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
 
         // set SpaceObjectsCustomMenu location and json config file,  flag true to display SpaceObject Menu, false to hide
         cadviewer.cvjs_setSpaceObjectsCustomMenu( "/content/customInsertSpaceObjectMenu/", "cadviewercustomspacecommands.json", true);
-
 
 
         // Initialize CADViewer  - needs the div name on the svg element on page that contains CADViewerJS and the location of the
@@ -1234,6 +1233,7 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
            cadviewer.cvjs_InitCADViewer_highLight_popUp_app("floorPlan", "/assets/cadviewer/app/", cvjsRoomPolygonBaseAttributes, cvjsRoomPolygonHighlightAttributes, cvjsRoomPolygonSelectAttributes, my_cvjsPopUpBody );
                        
               
+
            // For AngularJS we need a different setting of images, loading from /assets folder	
            //cadviewer.cvjs_InitCADViewer_app("floorPlan", ServerUrl+"app/", "assets/cadviewer/app/images/");
            //cadviewer.cvjs_InitCADViewer_app("floorPlan", "assets/cadviewer/app/");
