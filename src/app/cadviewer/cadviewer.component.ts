@@ -611,13 +611,13 @@ function myCustomModalPopUpBody(rmid : any){
     // style=\"background-color: none; color: #CBCBCB;\"
     my_cvjsPopUpBody = "<div  class=\"cvjs_modal_1\" id=\"my_own_clickmenu1()\">Custom<br>Menu 1<br><i class=\'fa fa-undo\'></i></div>";
     my_cvjsPopUpBody += "<div  class=\"cvjs_modal_1\" id=\"my_own_clickmenu2()\">Custom<br>Menu 2<br><i class=\'fa fa-info-circle\'></i></div>";
-    my_cvjsPopUpBody += "<div  class=\"cvjs_modal_1\" id=\"cvjs_zoomHere()\">Zoom<br>Here<br><i class=\'fa fa-search-plus\'></i></div>";
+    my_cvjsPopUpBody += "<div  class=\"cvjs_modal_1\" id=\"cvjs_zoomHere()\">Zoom<br>Here<br><i class=\'fa fa-search-plus cvjs_modal_1\'></i></div>";
   }
   else
   if (modalnumber == 1){
     // column based, but just two click menus
     my_cvjsPopUpBody = "<div class=\"cvjs_modal_1\" id=\"my_own_clickmenu1()\">Custom<br>Menu One<br><i class=\'fa fa-undo\'></i></div>";
-    my_cvjsPopUpBody += "<div class=\"cvjs_modal_1\" id=\"cvjs_zoomHere()\">Zoom<br>Here<br><i class=\'fa fa-reply\'></i></div>";
+    my_cvjsPopUpBody += "<div class=\"cvjs_modal_1\" id=\"cvjs_zoomHere()\">Zoom<br>Here<br><i class=\'fa fa-reply cvjs_modal_1\'></i></div>";
   }
   else
   if (modalnumber >=2){
