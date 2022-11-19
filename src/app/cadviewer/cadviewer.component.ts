@@ -1065,13 +1065,8 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
 
       cadviewer.cvjs_setAllServerPaths_and_Handlers(ServerBackEndUrl, ServerUrl, ServerLocation, "NodeJS", "Angular", "floorPlan","");
 
-      // PATH and FILE to be loaded, can be in formats DWG, DXF, DWF, SVG , JS, DGN, PCF, JPG, GIF, PNG
-//      FileName = ServerBackEndUrl+ "/content/drawings/dwg/BRA_Alta Vila_02_CkIn_06082020.dwg";
-//      FileName = ServerBackEndUrl+ "/content/drawings/dwg/hq17_2spaces.dwg";	
-        
-        FileName = ServerBackEndUrl+ "/content/drawings/dwg/hq17_.dwg";	    
-
-      try{
+              
+      try{  // loading from external source
       
         FileName = params.url;
         tempArray = params.Seats;
@@ -1090,8 +1085,24 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
 
         FileName = ServerBackEndUrl+ "/content/drawings/dwg/hq17_.dwg";	    
 
+
+      // PATH and FILE to be loaded, can be in formats DWG, DXF, DWF, SVG , JS, DGN, PCF, JPG, GIF, PNG
+      //      FileName = ServerBackEndUrl+ "/content/drawings/dwg/BRA_Alta Vila_02_CkIn_06082020.dwg";
+      //      FileName = ServerBackEndUrl+ "/content/drawings/dwg/hq17_2spaces.dwg";	
+              
+      FileName = ServerBackEndUrl+ "/content/drawings/dwg/hq17_.dwg";	  
+
+  
+
       }
         
+
+
+
+
+
+
+
 
       cadviewer.cvjs_setCallbackMethod("cvjs_OnLoadEnd", cvjs_OnLoadEnd);
       cadviewer.cvjs_setCallbackMethod("cvjs_graphicalObjectOnChange", cvjs_graphicalObjectOnChange);
