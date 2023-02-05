@@ -722,10 +722,17 @@ var ServerBackEndUrl = "http://localhost:53737/";
 var ServerLocation = "";
 
 
+// Connecting to .NET Core server
+var ServerUrl = "https://localhost:4200/";
+var ServerBackEndUrl = "https://localhost:5001/";
+var ServerLocation = "";
+
+
 // Standard NodeJS Server
 var ServerUrl = "http://localhost:4200/";
 var ServerBackEndUrl = "http://localhost:3000/";
 var ServerLocation = "";
+
 
 
 
@@ -1291,7 +1298,7 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
           
            // NOTE BELOW: THESE SETTINGS ARE FOR SERVER CONTROLS FOR UPLOAD OF REDLINES
            
-           cadviewer.cvjs_setRedlinesAbsolutePath(ServerBackEndUrl+'/content/redlines/v7/', ServerLocation+'/content/redlines/v7/', true);
+           cadviewer.cvjs_setRedlinesAbsolutePath(ServerBackEndUrl+'/content/redlines/v7/', ServerLocation+'/content/redlines/v7/', false);
            cadviewer.cvjs_setServerFileLocation_AbsolutePaths(ServerLocation+'/content/drawings/dwg/', ServerBackEndUrl+'content/drawings/dwg/',"","");
            cadviewer.cvjs_setSpaceObjectsAbsolutePath(ServerBackEndUrl+'/content/spaceObjects/demoUsers/', ServerLocation+'/content/spaceObjects/demoUsers/');
 
