@@ -430,7 +430,7 @@ cadviewer.cvjs_openRedlineSaveModal("floorPlan");
 // see implementation below
 //startMethodRed();
 // API call to save stickynotes and redlines
-//cadviewer.cvjs_saveStickyNotesRedlines("floorPlan");
+//cadviewer.cvjs_saveStickyNotesRedlines("floorPlan", false, "");
 }
 
 
@@ -449,7 +449,7 @@ cadviewer.cvjs_openRedlineLoadModal("floorPlan");
 // startMethodRed();
 
 // API call to load stickynotes and redlines
-//cadviewer.cvjs_loadStickyNotesRedlines("floorPlan");
+//cadviewer.cvjs_loadStickyNotesRedlines("floorPlan", false);
 }
 
 
