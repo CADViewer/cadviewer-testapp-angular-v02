@@ -446,7 +446,7 @@ cadviewer.cvjs_openRedlineLoadModal("floorPlan");
 
 // custom method startMethodRed to set the name and location of redline to load
 // see implementation below
-// startMethodRed();
+//startMethodRed();
 
 // API call to load stickynotes and redlines
 //cadviewer.cvjs_loadStickyNotesRedlines("floorPlan", false);
@@ -1121,12 +1121,6 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
 
       }
         
-
-
-
-
-
-
 
 
       cadviewer.cvjs_setCallbackMethod("cvjs_OnLoadEnd", cvjs_OnLoadEnd);
