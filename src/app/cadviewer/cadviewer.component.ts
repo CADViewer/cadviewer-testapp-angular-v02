@@ -1176,6 +1176,8 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
        cadviewer.cvjs_setServerLocationURL(ServerLocation, ServerUrl);
        cadviewer.cvjs_PrintToPDFWindowRelativeSize(0.8);
        cadviewer.cvjs_setFileModalEditMode(false);
+       cadviewer.cvjs_setCADViewerInterfaceVersion(8);
+
         
         // For "Merge DWG" / "Merge PDF" commands, set up the email server to send merged DWG files or merged PDF files with redlines/interactive highlight.
         // See php / xampp documentation on how to prepare your server
