@@ -1685,6 +1685,14 @@ public highlight_space_object(myspace :string, scale : number){
 
 
 
+
+public printModal(){
+
+  cadviewer.cvjs_Print("floorPlan");
+
+}
+
+
 // Toggle sensor objects
 
 public browstateflag = 0;
