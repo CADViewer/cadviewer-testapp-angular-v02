@@ -1178,6 +1178,12 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
        cadviewer.cvjs_setFileModalEditMode(false);
        cadviewer.cvjs_setCADViewerInterfaceVersion(8);
 
+
+      //cadviewer.cvjs_setCADViewerSkin("lightgray"); // lightgray, black, deepblue  // method can be omitted, alternative is "deepblue" , "nextcloud"
+      cadviewer.cvjs_setCADViewerSkin("black"); // lightgray, black, deepblue  // method can be omitted, alternative is "deepblue" , "nextcloud"
+      //		cadviewer.cvjs_setCADViewerSkin("deepblue"); // lightgray, black, deepblue  // method can be omitted, alternative is "deepblue" , "nextcloud"
+
+
         
         // For "Merge DWG" / "Merge PDF" commands, set up the email server to send merged DWG files or merged PDF files with redlines/interactive highlight.
         // See php / xampp documentation on how to prepare your server
