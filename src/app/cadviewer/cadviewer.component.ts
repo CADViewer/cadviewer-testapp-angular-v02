@@ -230,7 +230,11 @@ var myredlinestickynoteObjects = {};
 
 // Callback Method on Creation and Delete 
 //export function cvjs_graphicalObjectOnChange(type, graphicalObject, spaceID){
-function cvjs_graphicalObjectOnChange(type :string, graphicalObject :string, spaceID :string){
+function cvjs_graphicalObjectOnChange(type :string, graphicalObject :string, spaceID :string, evt: any){
+
+
+	if (evt!=null) console.log("evt.which ="+evt.which);  // 1=left mouse , 3=right mouse
+
 	// do something with the graphics object created! 
 //	window.alert("CALLBACK: cvjs_graphicalObjectOnChange: "+type+" "+graphicalObject+" "+spaceID+" indexSpace: "+graphicalObject.toLowerCase().indexOf("space"));
 	console.log("CALLBACK: cvjs_graphicalObjectOnChange: "+type+" "+graphicalObject+" "+spaceID+" indexSpace: "+graphicalObject.toLowerCase().indexOf("space"));
