@@ -726,16 +726,22 @@ var ServerBackEndUrl = "http://localhost:53737/";
 var ServerLocation = "";
 
 
+
+
 // Connecting to .NET Core server
 var ServerUrl = "https://localhost:4200/";
-var ServerBackEndUrl = "https://localhost:5001/";
+var ServerBackEndUrl = "https://localhost:44374/";
 var ServerLocation = "";
+
 
 
 // Standard NodeJS Server
 var ServerUrl = "http://localhost:4200/";
 var ServerBackEndUrl = "http://localhost:3000/";
 var ServerLocation = "";
+
+
+
 
 
 
@@ -1091,8 +1097,12 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
   */    
       cadviewer.cvjs_debugMode(true);
 
-
+// NODEJS Server
       cadviewer.cvjs_setAllServerPaths_and_Handlers(ServerBackEndUrl, ServerUrl, ServerLocation, "NodeJS", "Angular", "floorPlan","");
+
+// DotNetCore Server
+//      cadviewer.cvjs_setAllServerPaths_and_Handlers(ServerBackEndUrl, ServerUrl, ServerLocation, "DotNetCore", "Angular", "floorPlan","CADViewer");
+
 
               
       try{  // loading from external source
