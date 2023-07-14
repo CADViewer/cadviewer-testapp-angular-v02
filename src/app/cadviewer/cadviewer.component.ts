@@ -734,14 +734,10 @@ var ServerBackEndUrl = "https://localhost:44374/";
 var ServerLocation = "";
 
 
-
 // Standard NodeJS Server
 var ServerUrl = "http://localhost:4200/";
 var ServerBackEndUrl = "http://localhost:3000/";
 var ServerLocation = "";
-
-
-
 
 
 
@@ -1679,12 +1675,30 @@ public customHighlightSingleID(){
 
 }
 
+
+public customDeleteSingleID(){
+
+  var singleid = ((document.getElementById("singleID") as HTMLInputElement).value);
+  window.alert("delete:"+singleid);
+  this.delete_space_object(singleid);
+
+}
+
 public highlight_space_object(myspace :string, scale : number){
 
   cadviewer.cvjs_zoomHere_ObjectIdDiv( myspace, scale, "floorPlan");
   cadviewer.cvjs_highlightSpace(myspace, highlight_green);
 
 }
+
+
+public delete_space_object(myspace :string){
+
+  cadviewer.cvjs_deleteSpaceObjectDirect("floorPlan",myspace);
+
+}
+
+
 
 
 
