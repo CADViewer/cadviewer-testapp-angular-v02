@@ -1312,7 +1312,7 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
            
            cadviewer.cvjs_setRedlinesAbsolutePath(ServerBackEndUrl+'/content/redlines/v7/', ServerLocation+'/content/redlines/v7/', false);
            cadviewer.cvjs_setServerFileLocation_AbsolutePaths(ServerLocation+'/content/drawings/dwg/', ServerBackEndUrl+'content/drawings/dwg/',"","");
-           cadviewer.cvjs_setSpaceObjectsAbsolutePath(ServerBackEndUrl+'/content/spaceObjects/demoUsers/', ServerLocation+'/content/spaceObjects/demoUsers/');
+           cadviewer.cvjs_setSpaceObjectsAbsolutePath(ServerBackEndUrl+'/content/spaceObjects/demoUsers/', ServerLocation+'/content/spaceObjects/demoUsers/', true);
 
          
            // NOTE BELOW: THESE SETTINGS ARE FOR SERVER CONTROLS FOR CONVERTING DWG, DXF, DWF files         
@@ -1327,7 +1327,7 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
           cadviewer.cvjs_conversion_addAXconversionParameter("LA", "");		 
 
 
-          cadviewer.cvjs_conversion_addAXconversionParameter("HLALL", "");		 
+          //cadviewer.cvjs_conversion_addAXconversionParameter("HLALL", "");		 
 
 
           // NOTE ABOVE: THESE SETTINGS ARE FOR SERVER CONTROLS FOR CONVERTING DWG, DXF, DWF files
