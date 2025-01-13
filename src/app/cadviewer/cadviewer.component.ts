@@ -82,6 +82,12 @@ function cvjs_OnLoadEnd(){
 
   console.log("ONLOADEND!");
 
+  cadviewer.cvjs_clearObjectAction();
+
+
+  console.log("ONLOADEND! - after clearObjectAction");
+
+
 
   cadviewer.cvjs_resetZoomPan("floorPlan");
 
@@ -105,7 +111,7 @@ function cvjs_OnLoadEnd(){
     var processHandles = true;
     if (processHandles){
       cadviewer.cvjs_handleObjectsParceBlocks(false);
-      cadviewer.cvjs_handleObjectsParceTextOnly(true);
+      cadviewer.cvjs_handleObjectsParceTextOnly(false);
       cadviewer.cvjs_processHandleObjects();
     }
 
@@ -141,12 +147,17 @@ function cvjs_OnLoadEnd(){
 function cvjs_mouseenter(id :string, handle : string, entity :string){
 
   console.log("cvjs_mouseenter");
-  console.log("Hello: "+cadviewer.cvjs_getTextOnId(id));
+  console.log("TextObject: "+cadviewer.cvjs_getTextOnId(id));
 
-	cadviewer.cvjs_mouseenter_handleObjectStyles("#F00", 10.0, 1.0, false, id, handle, "Hello: "+cadviewer.cvjs_getTextOnId(id));
+  if (entity.indexOf("AcDbText") == -1)
+	  cadviewer.cvjs_mouseenter_handleObjectStyles("#F00", 10.0, 1.0, true, id, handle, "");	
+  else
+    cadviewer.cvjs_mouseenter_handleObjectStyles("#F00", 10.0, 1.0, false, id, handle, "TextObject: "+cadviewer.cvjs_getTextOnId(id));
 
 
 };
+
+
 function cvjs_mousedown(id :string, handle :string, entity :string){
   console.log("cvjs_mousedown");
 };
@@ -1091,6 +1102,7 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
           cadviewer.cvjs_emptyMainCanvasInAngular("floorPlan");
       } 
   */    
+
       cadviewer.cvjs_debugMode(true);
 
 // NODEJS Server
@@ -1328,6 +1340,11 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
 
 
           //cadviewer.cvjs_conversion_addAXconversionParameter("HLALL", "");		 
+
+
+
+          cadviewer.cvjs_clearObjectAction();
+
 
 
           // NOTE ABOVE: THESE SETTINGS ARE FOR SERVER CONTROLS FOR CONVERTING DWG, DXF, DWF files
@@ -1764,6 +1781,18 @@ public togglesensorstates(){
     }
 
 }
+
+
+
+public activateHandles(){
+
+  cadviewer.cvjs_processHandleObjects();
+  cadviewer.cvjs_handleObjectsParceBlocks(false);
+  window.alert("Handles activated");
+
+}
+
+
 
 
 
