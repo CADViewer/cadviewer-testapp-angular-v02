@@ -1145,6 +1145,11 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
         
 
 
+
+
+
+
+
       cadviewer.cvjs_setCallbackMethod("cvjs_OnLoadEnd", cvjs_OnLoadEnd);
       cadviewer.cvjs_setCallbackMethod("cvjs_graphicalObjectOnChange", cvjs_graphicalObjectOnChange);
       cadviewer.cvjs_setCallbackMethod("cvjs_OnLoadEndRedlines", cvjs_OnLoadEndRedlines);
@@ -1201,12 +1206,10 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
        cadviewer.cvjs_setCADViewerInterfaceVersion(8);
 
 
-      //cadviewer.cvjs_setCADViewerSkin("lightgray"); // lightgray, black, deepblue  // method can be omitted, alternative is "deepblue" , "nextcloud"
-       cadviewer.cvjs_setCADViewerSkin("black"); // lightgray, black, deepblue  // method can be omitted, alternative is "deepblue" , "nextcloud"
-      //		cadviewer.cvjs_setCADViewerSkin("deepblue"); // lightgray, black, deepblue  // method can be omitted, alternative is "deepblue" , "nextcloud"
+      // 10.69.7
+		  cadviewer.cvjs_setCADViewerSkin("dark-skin"); // dark-skin, light-skin, lightgray, black, deepblue  // method can be omitted, alternative is "deepblue" , "nextcloud"
 
-
-        
+      
         // For "Merge DWG" / "Merge PDF" commands, set up the email server to send merged DWG files or merged PDF files with redlines/interactive highlight.
         // See php / xampp documentation on how to prepare your server
         cadviewer.cvjs_emailSettings_PDF_publish("From CAD Server", "my_from_address@mydomain.com", "my_cc_address@mydomain.com", "my_reply_to@mydomain.com");
