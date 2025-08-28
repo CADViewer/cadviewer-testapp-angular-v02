@@ -1335,7 +1335,7 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
          
            cadviewer.cvjs_conversion_clearAXconversionParameters();
            cadviewer.cvjs_conversion_addAXconversionParameter("last", "");		 
-           cadviewer.cvjs_conversion_addAXconversionParameter("extents", "");		 
+           //cadviewer.cvjs_conversion_addAXconversionParameter("extents", "");		 
      
           cadviewer.cvjs_conversion_addAXconversionParameter("RL", "RM_");		 
           cadviewer.cvjs_conversion_addAXconversionParameter("TL", "RM_TXT");		 
