@@ -1144,12 +1144,6 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
       }
         
 
-
-
-
-
-
-
       cadviewer.cvjs_setCallbackMethod("cvjs_OnLoadEnd", cvjs_OnLoadEnd);
       cadviewer.cvjs_setCallbackMethod("cvjs_graphicalObjectOnChange", cvjs_graphicalObjectOnChange);
       cadviewer.cvjs_setCallbackMethod("cvjs_OnLoadEndRedlines", cvjs_OnLoadEndRedlines);
@@ -1200,7 +1194,7 @@ this.mouseupSubscription$ = this.mouseupObservable$.subscribe(evt => {
        cadviewer.cvjs_CADViewerPro(true);
        
        // Pass over the location of the installation, will update the internal paths
-       cadviewer.cvjs_setServerLocationURL(ServerLocation, ServerUrl);
+       //cadviewer.cvjs_setServerLocationURL(ServerLocation, ServerUrl);
        cadviewer.cvjs_PrintToPDFWindowRelativeSize(0.8);
        cadviewer.cvjs_setFileModalEditMode(false);
        cadviewer.cvjs_setCADViewerInterfaceVersion(8);
